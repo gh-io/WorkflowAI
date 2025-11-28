@@ -16,7 +16,7 @@ from core.domain.models.models import Model
 def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
     return {
         Model.MIXTRAL_8X7B_32768: DeprecatedModel(
-            replacement_model=Model.MISTRAL_SMALL_2503,
+            replacement_model=Model.MISTRAL_SMALL_LATEST,
         ),
         Model.MISTRAL_LARGE_2_LATEST: LatestModel(
             model=Model.MISTRAL_LARGE_2_2407,
@@ -135,12 +135,8 @@ def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
             supports_tool_calling=True,
             fallback=ModelFallback.default("cheapest"),
         ),
-        Model.MISTRAL_SMALL_LATEST: LatestModel(
-            model=Model.MISTRAL_SMALL_2503,
+        Model.MISTRAL_SMALL_LATEST: ModelData(
             display_name="Mistral Small (latest)",
-        ),
-        Model.MISTRAL_SMALL_2503: ModelData(
-            display_name="Mistral Small (25-03)",
             supports_json_mode=True,
             supports_input_image=True,
             supports_input_pdf=True,
@@ -150,54 +146,29 @@ def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
                 source="https://docs.mistral.ai/getting-started/models/",
             ),
             icon_url="https://workflowai.blob.core.windows.net/workflowai-public/mistral.svg",
-            release_date=date(2025, 3, 17),
+            release_date=date(2025, 6, 11),
             quality_data=QualityData(mmlu=52.9, gpqa=33.8),
             provider_name=DisplayedProvider.MISTRAL_AI.value,
             supports_tool_calling=True,
-            latest_model=Model.MISTRAL_SMALL_LATEST,
             fallback=ModelFallback.default("cheapest"),
         ),
-        Model.MISTRAL_SMALL_2501: ModelData(
-            display_name="Mistral Small (25-01)",
-            supports_json_mode=True,
-            supports_input_image=False,
-            supports_input_pdf=False,
-            supports_input_audio=False,
-            max_tokens_data=MaxTokensData(
-                max_tokens=32768,
-                source="https://docs.mistral.ai/getting-started/models/",
-            ),
-            icon_url="https://workflowai.blob.core.windows.net/workflowai-public/mistral.svg",
-            release_date=date(2025, 1, 13),
-            quality_data=QualityData(mmlu=52.9, gpqa=33.8),
-            provider_name=DisplayedProvider.MISTRAL_AI.value,
-            supports_tool_calling=True,
-            latest_model=Model.MISTRAL_SMALL_LATEST,
-            fallback=ModelFallback.default("cheapest"),
+        Model.MISTRAL_SMALL_2503: DeprecatedModel(
+            replacement_model=Model.MISTRAL_SMALL_LATEST,
         ),
-        Model.MISTRAL_SMALL_2409: ModelData(
-            display_name="Mistral Small (24-09)",
-            supports_json_mode=True,
-            supports_input_image=False,
-            supports_input_pdf=False,
-            supports_input_audio=False,
-            max_tokens_data=MaxTokensData(
-                max_tokens=32768,
-                source="https://docs.mistral.ai/getting-started/models/",
-            ),
-            icon_url="https://workflowai.blob.core.windows.net/workflowai-public/mistral.svg",
-            release_date=date(2024, 9, 24),
-            quality_data=QualityData(mmlu=52.9, gpqa=33.8),
-            provider_name=DisplayedProvider.MISTRAL_AI.value,
-            supports_tool_calling=True,
-            latest_model=Model.MISTRAL_SMALL_LATEST,
-            fallback=ModelFallback.default("cheapest"),
+        Model.MISTRAL_SMALL_2501: DeprecatedModel(
+            replacement_model=Model.MISTRAL_SMALL_LATEST,
+        ),
+        Model.MISTRAL_SMALL_2409: DeprecatedModel(
+            replacement_model=Model.MISTRAL_SMALL_LATEST,
         ),
         Model.MISTRAL_SABA_2502: DeprecatedModel(
-            replacement_model=Model.MISTRAL_SMALL_2503,
+            replacement_model=Model.MISTRAL_SMALL_LATEST,
         ),
-        Model.CODESTRAL_2501: ModelData(
-            display_name="CodeStral Mamba (25-01)",
+        Model.CODESTRAL_2501: DeprecatedModel(
+            replacement_model=Model.CODESTRAL_LATEST,
+        ),
+        Model.CODESTRAL_LATEST: ModelData(
+            display_name="CodeStral (latest)",
             supports_json_mode=True,
             supports_input_image=False,
             supports_input_pdf=False,
@@ -207,7 +178,7 @@ def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
                 source="https://docs.mistral.ai/getting-started/models/",
             ),
             icon_url="https://workflowai.blob.core.windows.net/workflowai-public/mistral.svg",
-            release_date=date(2025, 1, 13),
+            release_date=date(2025, 9, 30),
             quality_data=QualityData(mmlu=63.47, gpqa=38.35),
             provider_name=DisplayedProvider.MISTRAL_AI.value,
             supports_tool_calling=True,
@@ -231,7 +202,7 @@ def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
             supports_tool_calling=True,
             fallback=ModelFallback.default("cheapest"),
         ),
-        Model.MISTRAL_MEDIUM_2505: ModelData(
+        Model.MISTRAL_MEDIUM_LATEST: ModelData(
             display_name="Mistral Medium 3 (25-05)",
             supports_json_mode=True,
             supports_input_image=True,
@@ -253,8 +224,11 @@ def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
             supports_tool_calling=True,
             fallback=ModelFallback.default("cheap"),
         ),
-        Model.MAGISTRAL_SMALL_2506: ModelData(
-            display_name="Magistral Small (25-06)",
+        Model.MISTRAL_MEDIUM_2505: DeprecatedModel(
+            replacement_model=Model.MISTRAL_MEDIUM_LATEST,
+        ),
+        Model.MAGISTRAL_SMALL_LATEST: ModelData(
+            display_name="Magistral Small (latest)",
             supports_json_mode=True,
             supports_input_image=True,
             supports_input_pdf=True,
@@ -264,7 +238,7 @@ def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
                 source="https://docs.mistral.ai/getting-started/models/models_overview/",
             ),
             icon_url="https://workflowai.blob.core.windows.net/workflowai-public/mistral.svg",
-            release_date=date(2025, 6, 11),
+            release_date=date(2025, 9, 11),
             quality_data=QualityData(
                 gpqa_diamond=68.18,
                 source="https://huggingface.co/mistralai/Magistral-Small-2506",
@@ -275,8 +249,11 @@ def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
             reasoning=ModelReasoningBudget(disabled=None, low=None, medium=None, high=None),
             fallback=ModelFallback.default("cheap"),
         ),
-        Model.MAGISTRAL_MEDIUM_2506: ModelData(
-            display_name="Magistral Medium (25-06)",
+        Model.MAGISTRAL_SMALL_2506: DeprecatedModel(
+            replacement_model=Model.MAGISTRAL_SMALL_LATEST,
+        ),
+        Model.MAGISTRAL_MEDIUM_LATEST: ModelData(
+            display_name="Magistral Medium (latest)",
             supports_json_mode=True,
             supports_input_image=True,
             supports_input_pdf=True,
@@ -286,7 +263,7 @@ def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
                 source="https://docs.mistral.ai/getting-started/models/models_overview/",
             ),
             icon_url="https://workflowai.blob.core.windows.net/workflowai-public/mistral.svg",
-            release_date=date(2025, 6, 11),
+            release_date=date(2025, 9, 1),
             quality_data=QualityData(
                 gpqa_diamond=79.8,
                 source="https://mistral.ai/news/magistral",
@@ -296,5 +273,8 @@ def mistral_models() -> dict[Model, ModelData | LatestModel | DeprecatedModel]:
             # Magistral does not support configuring a reasoning budget or effort
             reasoning=ModelReasoningBudget(disabled=None, low=None, medium=None, high=None),
             fallback=ModelFallback.default("medium"),
+        ),
+        Model.MAGISTRAL_MEDIUM_2506: DeprecatedModel(
+            replacement_model=Model.MAGISTRAL_MEDIUM_LATEST,
         ),
     }

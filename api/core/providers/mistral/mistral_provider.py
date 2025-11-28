@@ -366,4 +366,4 @@ class MistralAIProvider(HTTPXProvider[MistralAIConfig, CompletionResponse]):
 
     @override
     def default_model(self) -> Model:
-        return Model.MISTRAL_SMALL_2503
+        return Model.MISTRAL_SMALL_LATEST

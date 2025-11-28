@@ -657,21 +657,7 @@ MISTRAL_PROVIDER_DATA: ProviderDataByModel = {
             source="https://mistral.ai/products/la-plateforme#pricing",
         ),
     ),
-    Model.MISTRAL_SMALL_2409: ModelProviderData(
-        text_price=TextPricePerToken(
-            prompt_cost_per_token=0.1 * ONE_MILLION_TH,
-            completion_cost_per_token=0.3 * ONE_MILLION_TH,
-            source="https://mistral.ai/products/la-plateforme#pricing",
-        ),
-    ),
-    Model.MISTRAL_SMALL_2501: ModelProviderData(
-        text_price=TextPricePerToken(
-            prompt_cost_per_token=0.1 * ONE_MILLION_TH,
-            completion_cost_per_token=0.3 * ONE_MILLION_TH,
-            source="https://mistral.ai/products/la-plateforme#pricing",
-        ),
-    ),
-    Model.MISTRAL_SMALL_2503: ModelProviderData(
+    Model.MISTRAL_SMALL_LATEST: ModelProviderData(
         text_price=TextPricePerToken(
             prompt_cost_per_token=0.1 * ONE_MILLION_TH,
             completion_cost_per_token=0.3 * ONE_MILLION_TH,
@@ -706,28 +692,28 @@ MISTRAL_PROVIDER_DATA: ProviderDataByModel = {
             source="https://mistral.ai/products/la-plateforme#pricing",
         ),
     ),
-    Model.CODESTRAL_2501: ModelProviderData(
+    Model.CODESTRAL_LATEST: ModelProviderData(
         text_price=TextPricePerToken(
             prompt_cost_per_token=0.3 * ONE_MILLION_TH,
             completion_cost_per_token=0.9 * ONE_MILLION_TH,
             source="https://mistral.ai/products/la-plateforme#pricing",
         ),
     ),
-    Model.MISTRAL_MEDIUM_2505: ModelProviderData(
+    Model.MISTRAL_MEDIUM_LATEST: ModelProviderData(
         text_price=TextPricePerToken(
             prompt_cost_per_token=0.4 * ONE_MILLION_TH,
             completion_cost_per_token=2 * ONE_MILLION_TH,
             source="https://mistral.ai/products/la-plateforme#pricing",
         ),
     ),
-    Model.MAGISTRAL_SMALL_2506: ModelProviderData(
+    Model.MAGISTRAL_SMALL_LATEST: ModelProviderData(
         text_price=TextPricePerToken(
             prompt_cost_per_token=0.5 * ONE_MILLION_TH,
             completion_cost_per_token=1.5 * ONE_MILLION_TH,
             source="https://mistral.ai/pricing#api-pricing",
         ),
     ),
-    Model.MAGISTRAL_MEDIUM_2506: ModelProviderData(
+    Model.MAGISTRAL_MEDIUM_LATEST: ModelProviderData(
         text_price=TextPricePerToken(
             prompt_cost_per_token=2.0 * ONE_MILLION_TH,
             completion_cost_per_token=5.0 * ONE_MILLION_TH,
